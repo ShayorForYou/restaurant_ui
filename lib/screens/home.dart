@@ -43,8 +43,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: NetworkImage(
-                              'https://cf.bstatic.com/xdata/images/hotel/max1280x900/383834719.jpg?k=a8ed632aeaf2eb621e6753e941d4fb2f858005614b603cdef5bfe644ce1a1906&o=&hp=1'),
-                          fit: BoxFit.contain,
+                              'https://cache.marriott.com/content/dam/marriott-renditions/DACSI/dacsi-king-premier-guestroom-3248-hor-wide.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1140px:*'),
+                          fit: BoxFit.cover,
                         ),
                       ),
                     ),
@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       )),
                   Positioned(
-                    bottom: -50,
+                    bottom: -40,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 24.0),
                       child: SizedBox(
@@ -82,12 +82,12 @@ class _MyHomePageState extends State<MyHomePage> {
                             Text(
                               'Hotel Sheraton',
                               style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 24,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold),
                             ),
                             SizedBox(
-                              height: 10,
+                              height: 20,
                             ),
                             Row(
                               children: [
@@ -108,17 +108,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                               ],
                             ),
-                            SizedBox(
-                              height: 10,
-                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Row(
                                   children: [
                                     Icon(
-                                      Icons.star_border_purple500_rounded,
+                                      Icons.star_rate_outlined,
                                       color: Colors.orange,
+                                      size: 20,
+                                    ),
+                                    SizedBox(
+                                      width: 6,
                                     ),
                                     Text.rich(
                                       TextSpan(
@@ -178,7 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width - 56,
                   child: const ReadMoreText(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel erat sed mi finibus lacinia. Donec nec tincidunt sapien. Ut ultrices, libero sed ultrices vehicula, urna turpis sollicitudin risus, nec laoreet nunc metus a libero. Nullam vel erat sed mi finibus lacinia. Donec nec tincidunt sapien. Ut ultrices, libero sed ultrices vehicula, urna turpis sollicitudin risus, nec laoreet nunc metus a libero.',
+                    'A Bangladesh business hotel located in the heart of Banani, Sheraton Dhaka is just 10 minutes from corporate offices, embassies and shopping malls in the central business district. Guests enjoy free Wi-Fi, a full-service spa and five-star accommodations. Streamlined and refined, these hotel rooms come with signature Sheraton elements such as Sheraton Sleep Experience beds.',
                     style: TextStyle(
                         fontSize: 14,
                         color: Colors.white,
@@ -212,8 +213,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       endIndent: 250,
                     ),
                     Padding(
-                      padding:
-                      const EdgeInsets.symmetric(vertical: 10),
+                      padding: const EdgeInsets.symmetric(vertical: 10),
                       child: SizedBox(
                         height: 80,
                         child: ListView(
@@ -279,11 +279,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                     )
-
                   ],
                 ),
               ),
-
             ],
           ),
         ));
@@ -299,6 +297,7 @@ class AmenitiesContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      constraints: const BoxConstraints(minWidth: 100),
       decoration: BoxDecoration(
         color: const Color(0xFF2a2a2a),
         borderRadius: BorderRadius.circular(10),
@@ -316,9 +315,9 @@ class AmenitiesContainer extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          const Text(
-            'Restaurant',
-            style: TextStyle(
+          Text(
+            text,
+            style: const TextStyle(
                 fontSize: 14, color: Colors.grey, fontWeight: FontWeight.bold),
           ),
         ],
